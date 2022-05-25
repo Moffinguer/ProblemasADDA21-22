@@ -1,0 +1,33 @@
+head section
+
+Integer numComponentes()
+Integer numProductos()
+Double getTProd()
+Double getTMan()
+Double getprecioProducto(Integer i)
+Double getTProdComp(Integer i)
+Double getTElabComp(Integer i)
+Integer getMaxUnProd(Integer i)
+Double sumPrecioProducto(Integer i)
+Integer componenteEnProducto(Integer i)
+Double tTP = getTProd()
+Double tTM = getTMan()
+Integer u = numComponentes()
+Integer p = numProductos() 
+
+goal section
+
+max sum(getprecioProducto(i) x[i], i in 0 .. p )
+
+constraints section
+
+sum(getTProdComp(i) x[i], i in 0 .. p ) <= tTP
+sum(getTElabComp(i) x[i], i in 0 .. p ) <= tTM
+
+bounds section
+
+x[i] <= getMaxUnProd(i), i in 0 .. p
+
+int
+
+x[i], i in 0 .. p

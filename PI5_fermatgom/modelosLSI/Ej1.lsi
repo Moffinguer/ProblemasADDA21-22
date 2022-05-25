@@ -1,0 +1,23 @@
+head section
+
+Double getTamArch(Integer i)
+Double getTamMaxArchivo(Integer j)
+Double getCapArchivo(Integer j)
+Integer getNumArchivos()
+Integer getNumMem()
+Integer n = getNumArchivos()
+Integer m = getNumMem()
+
+goal section
+
+max sum(x[i, j], i in 0 .. n, j in 0 .. m)
+
+constraints section
+
+getTamArch(i) <= getTamMaxArchivo(j), i in 0 .. n, j in 0 .. m
+sum (x[i, j], j in 0 .. m ) <= 1, i in 0 .. n
+sum (getTamArch(i) x[i, j], i in 0 .. n ) <= getCapArchivo(j), j in 0 .. m 
+
+bin
+
+x[i,j], i in 0 .. n, j in 0 .. m

@@ -1,0 +1,26 @@
+head section
+
+Integer esInCompatible(Integer i, Integer j)
+Double presupuestoMinimo()
+Integer numOfCandidatos()
+Integer numCualidades()
+Integer getValoracion(Integer i)
+Double getCandidatoSueldo(Integer i)
+Integer tieneCualidad(Integer i, Integer j)
+Double pres = presupuestoMinimo()
+Integer n = numOfCandidatos()
+Integer m = numCualidades()
+
+goal section
+
+max sum(getValoracion(k) y[k], k in 0 .. n)
+
+constraints section
+
+sum (getCandidatoSueldo(k) y[k], k in 0 .. n) <= pres
+sum (y[i], i in 0 .. n | tieneCualidad(i, j) = 1) >= 1, j in 0 .. m
+y[i] + y[j] <= 1, i in 0 .. n, j in 0 .. n | esInCompatible(i, j) = 1 && i != j
+
+bin
+
+y[k], k in  0 .. n

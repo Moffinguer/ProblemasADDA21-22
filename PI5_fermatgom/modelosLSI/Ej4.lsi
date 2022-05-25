@@ -1,0 +1,23 @@
+head section
+
+Integer numContenedores()
+Integer numElementos()
+Double getPeso(Integer i)
+Double getCapacidad(Integer j)
+Integer elementoEnContenedor(Integer i, Integer j)
+Integer c = numContenedores()
+Integer e = numElementos()
+goal section
+
+max sum(y[j], j in 0 .. c)
+
+constraints section
+
+sum(getPeso(i) x[i, j], i in 0 .. e | elementoEnContenedor(i, j) = 1) - getCapacidad(j) y[j] = 0 , j in 0 .. c
+sum(x[i, j], j in 0 .. c) <= 1, i in 0 .. e
+
+
+bin
+
+x[i, j], i in 0 .. e, j in 0 .. c
+y[k], k in 0 .. c
